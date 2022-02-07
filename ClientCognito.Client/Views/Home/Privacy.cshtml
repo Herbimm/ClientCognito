@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAcessor
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<textarea rows="3" cols="50">@HttpContextAcessor.HttpContext.GetTokenAsync("access_token").GetAwaiter().GetResult()</textarea>
+
+
+<hr />
+<h2>Id Token</h2>
+
+
+<textarea rows="3" cols="50">@HttpContextAcessor.HttpContext.GetTokenAsync("id_token").GetAwaiter().GetResult()</textarea>
